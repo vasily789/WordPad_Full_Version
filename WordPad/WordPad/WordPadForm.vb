@@ -308,7 +308,7 @@ Public Class WordPadForm
             FontStyleStripComboBox.Items.Add(fontFamilies(i).Name)
         Next
         Me.Text = "New Rich Text Document.rtf - WordPad"
-        RichTextBox1.Font = New System.Drawing.Font(FontStyleStripComboBox.Text, FontSizeToolStripComboBox.Text)
+        FontStyleStripComboBox.SelectedIndex = 207
     End Sub
     Private Sub FontStyleStripComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FontStyleStripComboBox.SelectedIndexChanged
         RichTextBox1.SelectionFont = New System.Drawing.Font(FontStyleStripComboBox.Text, FontSizeToolStripComboBox.Text)
