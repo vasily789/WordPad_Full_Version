@@ -11,10 +11,10 @@ Public Class WordPadForm
     Dim StringToPrint As String
 
     Private Sub BoldToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BoldToolStripButton.Click
-        If RichTextBox1.SelectionFont.Italic Then 'its already italic, so set it to regular
+        If RichTextBox1.SelectionFont.Bold Then 'its already Bold, so set it to regular
             RichTextBox1.SelectionFont = New Font(Convert.ToString(FontStyleStripComboBox.SelectedItem), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Regular)
             'BoldBoolean = False
-        Else 'make it italic
+        Else 'make it Bold
             RichTextBox1.SelectionFont = New Font(Convert.ToString(FontStyleStripComboBox.SelectedItem), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Bold)
             'BoldBoolean = True
         End If
@@ -29,19 +29,19 @@ Public Class WordPadForm
         End If
     End Sub
     Private Sub UnderlineToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnderlineToolStripButton.Click
-        If RichTextBox1.SelectionFont.Italic Then 'its already italic, so set it to regular
+        If RichTextBox1.SelectionFont.Underline Then 'its already Underline, so set it to regular
             RichTextBox1.SelectionFont = New Font(FontStyleStripComboBox.SelectedItem.ToString(), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Regular)
             'UnderlineBoolean = False
-        Else 'make it italic
+        Else 'make it Underline
             RichTextBox1.SelectionFont = New Font(FontStyleStripComboBox.SelectedItem.ToString(), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Underline)
             'UnderlineBoolean = True
         End If
     End Sub
     Private Sub StrikeoutToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StrikeoutToolStripButton.Click
-        If RichTextBox1.SelectionFont.Italic Then 'its already italic, so set it to regular
+        If RichTextBox1.SelectionFont.Strikeout Then 'its already Strikeout, so set it to regular
             RichTextBox1.SelectionFont = New Font(FontStyleStripComboBox.SelectedItem.ToString(), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Regular)
             'StrikeoutBoolean = False
-        Else 'make it italic
+        Else 'make it Strikeout
             RichTextBox1.SelectionFont = New Font(FontStyleStripComboBox.SelectedItem.ToString(), Convert.ToSingle(FontSizeToolStripComboBox.SelectedItem), FontStyle.Strikeout)
             'StrikeoutBoolean = True
         End If
@@ -308,6 +308,7 @@ Public Class WordPadForm
             FontStyleStripComboBox.Items.Add(fontFamilies(i).Name)
         Next
         Me.Text = "New Rich Text Document.rtf - WordPad"
+        FontStyleStripComboBox.SelectedIndex = 207
     End Sub
     Private Sub FontStyleStripComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FontStyleStripComboBox.SelectedIndexChanged
         RichTextBox1.SelectionFont = New System.Drawing.Font(FontStyleStripComboBox.Text, FontSizeToolStripComboBox.Text)
